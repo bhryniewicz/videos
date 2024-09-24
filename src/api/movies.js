@@ -3,7 +3,10 @@ import { apiClient } from "./apiClient";
 export const moviesTypes = ["Movie", "Series", "Episode"];
 
 export const fetchMovies = async (title, type) => {
-  if (title == "") return [];
+  if (title == "" && type)
+    return { error: "To see some vidoes you need to fill the title input!" };
+
+  if (title == "" && !type) return [];
 
   const response = await apiClient.get("", {
     params: { s: `${title}`, type: type },
