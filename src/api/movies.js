@@ -4,7 +4,7 @@ export const moviesTypes = ["Movie", "Series", "Episode"];
 
 export const fetchMovies = async (title, type) => {
   if (title == "" && type)
-    return { error: "To see some vidoes you need to fill the title input!" };
+    return { error: "To see some vidoes you need to fill title input also!" };
 
   if (title == "" && !type) return [];
 
